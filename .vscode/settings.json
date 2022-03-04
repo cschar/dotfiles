@@ -1,0 +1,135 @@
+{
+
+  //jest
+  "jest.autoRun": "off",
+
+
+  //test
+    "editor.tokenColorCustomizations":{
+      // "comments": "#33FFCC",  //affects all comments in VSCode...
+      "textMateRules": [
+        //markdown regular
+        {
+          "scope": "string.other.link.title.markdown",
+          "settings": {
+            "foreground": "#61AFEF" 
+          }
+        },
+        
+        //Weird test area
+
+        {  "scope": "item.todo9",   "settings": {
+          "foreground": "#96eea99f",
+          "fontStyle": "bold",
+         }
+        },
+        {  "scope": "item.todo8",   "settings": {
+          "foreground": "#3df5659f"   }
+        },
+        {  "scope": "item.todo7",   "settings": {
+          "foreground": "#90f53d"   }
+        },
+        {  "scope": "item.todo6",   "settings": {
+          "foreground": "#f53dbe"   }
+        },
+        {  "scope": "item.todo4",   "settings": {
+          "foreground": "#603eb1"   }
+        },
+        {  "scope": "item.todo3",   "settings": {
+           "foreground": "#b13e85"   }
+        },
+        {
+          "scope": "item.todo",
+          "settings": {
+              "foreground": "#96be29",
+              "fontStyle": "bold"
+          }
+      },
+      {
+        "scope": "item.todo2",
+        "settings": {
+            "foreground": "#b13e85"
+        }
+    },
+//custom markdown plugin start
+      {
+        "scope": "my-simple-comment",
+        "settings": {
+          "foreground": "#57aa5b",
+          // "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "keyword.myBlip23",
+        "settings": {
+          "foreground": "#3eacac",
+        }
+      },
+      {
+        "scope": "keyword.myBlip",
+        "settings": {
+          "foreground": "#5b3eac",
+        }
+      },
+
+        ///markdown end
+        {
+          "scope": "keyword.COMMENT",
+          "settings": {
+            "foreground": "#57aa5b",
+            // "fontStyle": "bold"
+          }
+        },
+        {
+          "scope": "keyword.letter2",
+          "settings": {
+            "foreground": "#a5aa57",
+            // "fontStyle": "bold"
+          }
+        }
+      ]
+
+    },
+
+  ///
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "extensions.ignoreRecommendations": true,
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    
+    "terminal.integrated.profiles.osx": {
+        "MY-BASH-LOGIN": {
+          "path": "/usr/local/bin/bash",
+        
+        },
+        "shell": {
+          "path": "/usr/local/bin/bash",
+        }
+      },
+    "terminal.integrated.defaultProfile.osx": "MY-BASH-LOGIN",
+    ///est
+    // for tasks and debug
+    "terminal.integrated.automationShell.osx": "/usr/local/bin/bash",
+    
+    "redhat.telemetry.enabled": false,
+    "azureFunctions.showProjectWarning": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editor.untitled.hint": "hidden",
+    "azureFunctions.showCoreToolsWarning": false,
+    "workbench.startupEditor": "none",
+    "svelte.enable-ts-plugin": true,
+    "editor.linkedEditing": true,
+    "files.autoSaveDelay": 5000,
+    "tailwindCSS.includeLanguages": {
+        "typescriptreact": "html"
+    },
+    "turtle.useCodeThing": true,
+    "turtle.useCodeTing2": "FOO",
+    "turtles.colors.setting3": "left",
+    "turtle.colors.someColor": "#CCFFAA",
+    "terminal.external.osxExec": "iTerm.app",
+    "workbench.colorTheme": "One Dark Pro"
+}
