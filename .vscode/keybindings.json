@@ -1,5 +1,17 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+   //windows
+      {
+        "key": "cmd+[",
+        "command": "workbench.action.navigateBack",
+        "when": "isWindows"
+    },
+      {
+        "key": "cmd+]",
+        "command": "workbench.action.navigateForward",
+        "when": "isWindows"
+    },
+   //mac
    {
         "key": "cmd+[",
         "command": "workbench.action.navigateBack",
@@ -10,16 +22,8 @@
         "command": "editor.action.inspectTMScopes"
       },
     {
-        "key": "ctrl+-",
-        "command": "-workbench.action.navigateBack"
-    },
-    {
         "key": "cmd+]",
         "command": "workbench.action.navigateForward",
         "when": "isMac"
-    },
-    {
-        "key": "ctrl+shift+-",
-        "command": "-workbench.action.navigateForward"
     }
 ]
