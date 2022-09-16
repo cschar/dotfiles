@@ -1,4 +1,8 @@
 {
+  //don't show red lint squiggles on comments
+  "files.associations": {
+    "*.json": "jsonc"
+  },
 
   //jest
   "jest.autoRun": "off",
