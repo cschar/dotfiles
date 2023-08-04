@@ -27,3 +27,9 @@ alias gcane='git commit --amend --no-edit'
 alias gitlog="git log --graph --date=short --format=format:'%w(200,0,4)%C(yellow)%ad %Cblue%aN%Creset: %Cgreen%h%Creset %C(magenta)%d%Creset %s' $@ && echo \"\""
 alias glg="gitlog"
 alias g_clean_local="git branch --merged master | grep  --invert-match ".*master" | xargs -n 1 git branch --delete"
+alias gacpo='git add -u; git commit -m "fix"; git push origin'
+
+# kubernetes
+alias k="kubectl"
+
+alias sshu="ssh -o StrictHostKeyChecking=no"
