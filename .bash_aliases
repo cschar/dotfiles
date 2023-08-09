@@ -28,8 +28,15 @@ alias gitlog="git log --graph --date=short --format=format:'%w(200,0,4)%C(yellow
 alias glg="gitlog"
 alias g_clean_local="git branch --merged master | grep  --invert-match ".*master" | xargs -n 1 git branch --delete"
 alias gacpo='git add -u; git commit -m "fix"; git push origin'
+alias lz='lazygit'
 
 # kubernetes
 alias k="kubectl"
+#ex: klp fluent  to find fluent-bit-xcdfafadsf
+function klp {
+    NAME_SEARCH=$1
+    FULL_NAME=$(kubectl get pods --field-selector=status.phase=Running -o=name | grep "$NAME_SEARCH")
+    kubectl logs $FULL_NAME
+}
 
-alias sshu="ssh -o StrictHostKeyChecking=no"
+alias sshu="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
