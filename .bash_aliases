@@ -1,3 +1,5 @@
+# 
+alias edotfiles='code ~/mdev/dotfiles'
 
 #git alias
 alias gst='git status'
@@ -36,7 +38,16 @@ alias k="kubectl"
 function klp {
     NAME_SEARCH=$1
     FULL_NAME=$(kubectl get pods --field-selector=status.phase=Running -o=name | grep "$NAME_SEARCH")
+    
+    echo "kubectl logs $FULL_NAME"
     kubectl logs $FULL_NAME
 }
 
 alias sshu="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+
+function dl_bing {
+    URL=$(curl "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US" | jq .images[].url | sed s/\"//g)
+    echo "got url: https://bing.com/$URL"
+
+    wget "https://bing.com/$URL" -O bing.jpg
+}
