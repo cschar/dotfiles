@@ -45,7 +45,6 @@
 
     #   plugins = [
     #     {
-    #       # TODO: Remove this
     #       name = "fish-asdf";
     #       src = pkgs.fetchFromGitHub {
     #         owner = "rstacruz";
@@ -72,26 +71,26 @@
       nix-direnv.enable = true;
     };
 
-    starship = {
-      enable = true;
+    # starship = {
+    #   enable = true;
 
-      settings = {
-        command_timeout = 100;
-        format = "[$all](dimmed white)";
+    #   settings = {
+    #     command_timeout = 100;
+    #     format = "[$all](dimmed white)";
 
-        character = {
-          success_symbol = "[❯](dimmed green)";
-          error_symbol = "[❯](dimmed red)";
-        };
+    #     character = {
+    #       success_symbol = "[❯](dimmed green)";
+    #       error_symbol = "[❯](dimmed red)";
+    #     };
 
-        git_status = {
-          style = "bold yellow";
-          format = "([$all_status$ahead_behind]($style) )";
-        };
+    #     git_status = {
+    #       style = "bold yellow";
+    #       format = "([$all_status$ahead_behind]($style) )";
+    #     };
 
-        jobs.disabled = true;
-      };
-    };
+    #     jobs.disabled = true;
+    #   };
+    # };
 
     git = {
       enable = true;

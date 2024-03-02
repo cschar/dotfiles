@@ -12,20 +12,22 @@
 
   outputs = inputs@{ self, nix-darwin, home-manager, nixpkgs }: {
     darwinConfigurations = {
-      "A_MAC_COMPUTER" = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [
-          ./darwin.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager = {
-              users.etravers = import ../home-manager/home.nix;
-            };
-            users.users.etravers.home = "/Users/etravers";
-          }
-        ];
-        specialArgs = { inherit inputs; };
-      };
+      
+      
+      # "A_MAC_COMPUTER" = nix-darwin.lib.darwinSystem {
+      #   system = "aarch64-darwin";
+      #   modules = [
+      #     ./darwin.nix
+      #     home-manager.darwinModules.home-manager
+      #     {
+      #       home-manager = {
+      #         users.etravers = import ../home-manager/home.nix;
+      #       };
+      #       users.users.etravers.home = "/Users/etravers";
+      #     }
+      #   ];
+      #   specialArgs = { inherit inputs; };
+      # };
 
       "cmba" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -33,13 +35,13 @@
           
           ./darwin.nix
 
-          # home-manager.darwinModules.home-manager
-          # {
-          #   home-manager = {
-          #     users.evan = import ../home-manager/home.nix;
-          #   };
-          #   users.users.evan.home = "/Users/evan";
-          # }
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              users.cody = import ../home-manager/home.nix;
+            };
+            users.users.cody.home = "/Users/cody";
+          }
         ];
         specialArgs = { inherit inputs; };
       };

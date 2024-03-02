@@ -1,7 +1,7 @@
-{ config, pkgs, libs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
- # allow terraform
+  # allow terraform
   nixpkgs.config.allowUnfree = true;
 
 
@@ -9,6 +9,9 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
     [
+      pkgs.home-manager
+
+
       pkgs.vim
       pkgs.neovim
 
@@ -26,7 +29,7 @@
   nix.settings.experimental-features = "nix-command flakes";
 
   # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;  # default shell on catalina
+  programs.zsh.enable = true; # default shell on catalina
   # programs.fish.enable = true;
 
   # the tmux builtin to nix-darwin, not the stand-alone tmux nix package
@@ -37,9 +40,7 @@
     # sensibleOnTop = false;
     # prefix = "C-a";
     # escapeTime = 10;
-    # terminal = "wezterm";
 
-    # extraConfig = lib.fileContents /users/cody/.tmux.conf;
     extraConfig = lib.fileContents ../tmux/tmux.conf;
 
     # plugins = with pkgs.tmuxPlugins; [
@@ -52,8 +53,6 @@
     # ];
   };
 
-  # Set Git commit hash for darwin-version.
-  system.configurationRevision = self.rev or self.dirtyRev or null;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
