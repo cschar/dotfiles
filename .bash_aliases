@@ -1,5 +1,5 @@
 # 
-alias edotfiles='code ~/mdev/dotfiles'
+alias edot='code ~/development/repository/github.com/cschar/dotfiles'
 
 #git alias
 alias gst='git status'
