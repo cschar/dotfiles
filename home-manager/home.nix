@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, osConfig, ... }:
 #
 # home-manager nix file
 # contains
@@ -7,11 +7,19 @@
 
 {
 
-  imports = [
-    ./_nvim.nix
-    ./_git.nix
-    ./_tmux.nix
-  ];
+ # git is already installed on nixos manually
+ # complains if it exists
+ imports = if (osConfig.networking.hostName == "nixos")
+    then [
+      ./_nvim.nix
+      ./_tmux.nix
+    ]
+    else [
+      ./_git.nix
+      ./_nvim.nix
+      ./_tmux.nix
+    ];
+
 
   home = {
     stateVersion = "23.05"; # Please read the comment before changing.
