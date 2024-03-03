@@ -12,10 +12,13 @@
       #   logging
       #   pain-control
       #   sessionist
-      # gruvbox
-      nord
       tmux-thumbs
       #   yank
+      
+      #==== themes ====
+      gruvbox
+      # nord
+
     ];
   };
 }
