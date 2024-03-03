@@ -6,21 +6,38 @@
 # - programs
 
 {
+
+  imports = [
+    ./nvim.nix
+    ./_git.nix
+    ./_tmux.nix
+  ];
+
   home = {
     stateVersion = "23.05"; # Please read the comment before changing.
-
+    
     # The home.packages option allows you to install Nix packages into your
     # environment.
     packages = [
-      # pkgs.nixd # nix language server
+      
+      pkgs.azure-cli
+      
+      
+      # pkgs.git
+      pkgs.lazygit
+      pkgs.starship
+
+      # language servers
+      pkgs.nixd # nix language server
+      
     ];
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
     file = {
       # git
-      # ".cvsignore".source = ../git/.cvsignore;
-      # ".gitconfig".source = ../git/.gitconfig;
+      #".gitconfig.default".source = ../git/.gitconfig;
+
       # vim
       # ".config/nvim/.vimrc".source = ../nvim/.config/nvim/.vimrc;
       # wezterm
@@ -30,10 +47,15 @@
       # ".config/tmux/tmux.conf".source = ../tmux/tmux.conf;
 
       #random file
-      ".config/myfile/myfile.conf".source = ../tmux/tmux.conf;
+      # ".config/myfile/myfile.conf".source = ../tmux/tmux.conf;
+
+      #starship
+      ".config/starship.toml".source = ../starship/config.toml;
     };
   };
 
+
+  # https://github.com/nix-community/home-manager/tree/master/modules/programs
   programs = {
     # # Use fish
     # fish = {
@@ -65,6 +87,8 @@
     #   ];
     # };
 
+
+
     direnv = {
       enable = true;
 
@@ -90,38 +114,6 @@
 
     #     jobs.disabled = true;
     #   };
-    # };
-
-    git = {
-      enable = true;
-
-      lfs.enable = true;
-    };
-
-    # jujutsu = {
-    #   enable = true;
-    #   enableFishIntegration = true;
-    # };
-
-    # tmux = {
-    #   enable = true;
-    #   sensibleOnTop = false;
-    #   prefix = "C-a";
-    #   # prefix = "C-space";
-    #   escapeTime = 10;
-    #   shell = "${pkgs.fish}/bin/fish";
-    #   terminal = "wezterm";
-
-    #   extraConfig = lib.fileContents ../tmux/.config/tmux/tmux.conf;
-
-    #   plugins = with pkgs.tmuxPlugins; [
-    #     fuzzback
-    #     logging
-    #     pain-control
-    #     sessionist
-    #     tmux-thumbs
-    #     yank
-    #   ];
     # };
 
 

@@ -4,7 +4,6 @@
   # allow terraform
   nixpkgs.config.allowUnfree = true;
 
-
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
@@ -32,26 +31,7 @@
   programs.zsh.enable = true; # default shell on catalina
   # programs.fish.enable = true;
 
-  # the tmux builtin to nix-darwin, not the stand-alone tmux nix package
-  programs.tmux = {
-    enable = true;
-    enableSensible = true;
-    enableMouse = true;
-    # sensibleOnTop = false;
-    # prefix = "C-a";
-    # escapeTime = 10;
-
-    extraConfig = lib.fileContents ../tmux/tmux.conf;
-
-    # plugins = with pkgs.tmuxPlugins; [
-    #   fuzzback
-    #   logging
-    #   pain-control
-    #   sessionist
-    #   tmux-thumbs
-    #   yank
-    # ];
-  };
+  
 
 
   # Used for backwards compatibility, please read the changelog before changing.
@@ -86,7 +66,6 @@
 
   system.defaults = {
 
-    ### this doesnt change locatoin?
     screencapture = {
       #location = "/users/cody/Pictures/scrnshot/";
       location = "/users/cody/Pictures/scrnshot2/";
