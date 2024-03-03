@@ -45,9 +45,9 @@
       #     home-manager.darwinModules.home-manager
       #     {
       #       home-manager = {
-      #         users.etravers = import ../home-manager/home.nix;
+      #         users.cody = import ../home-manager/home.nix;
       #       };
-      #       users.users.etravers.home = "/Users/etravers";
+      #       users.users.cody.home = "/Users/cody";
       #     }
       #   ];
       #   specialArgs = { inherit inputs; };
@@ -57,12 +57,12 @@
         system = "aarch64-darwin";
         modules = [
 
-          ./darwin.nix
+          ./my-nix-darwin/darwin.nix
 
           home-manager.darwinModules.home-manager
           {
             home-manager = {
-              users.cody = import ../home-manager/home.nix;
+              users.cody = import ./home-manager/home.nix;
             };
             users.users.cody.home = "/Users/cody";
           }
