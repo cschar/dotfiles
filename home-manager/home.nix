@@ -8,7 +8,7 @@
 {
 
   imports = [
-    ./nvim.nix
+    ./_nvim.nix
     ./_git.nix
     ./_tmux.nix
   ];
@@ -22,6 +22,8 @@
       
       pkgs.azure-cli
       
+      pkgs.wget
+      pkgs.jq
       
       # pkgs.git
       pkgs.lazygit
@@ -50,7 +52,7 @@
       # ".config/myfile/myfile.conf".source = ../tmux/tmux.conf;
 
       #starship
-      ".config/starship.toml".source = ../starship/config.toml;
+      ".config/starship.toml".source = ../config/starship/config.toml;
     };
   };
 

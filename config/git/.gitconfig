@@ -5,10 +5,35 @@
 [core]
     # global gitignore
     excludesfile = /Users/cody/.gitignore
+    editor = nvim
     
+[commit]
+  verbose = true
 [url "git@github.com:"]
   insteadOf = "https://github.com"
-  
+[alias]
+  st = status --short --branch
+  co = checkout
+  aa = add --all
+  au = add --update
+  fa = fetch --all
+  fap = fetch --all --prune
+  b = branch
+  ff = merge --ff-only
+  ms = merge --no-commit --log --no-ff
+  mc = merge --log --no-ff
+  ci = commit -v
+  amend = commit -v --amend
+  ignored = !git ls-files -v | grep '^[[:lower:]]' | cut -c 3-
+  ignore = update-index --assume-unchanged
+  acknowledge = update-index --no-assume-unchanged
+  di = diff
+  dc = diff --cached
+  dh1 = diff HEAD~1
+  h = log --pretty='tformat:%C(auto,yellow)%h%C(auto,reset) %C(auto,green)(%ar)%C(auto,reset) %C(auto,bold blue)<%an>%C(auto,reset) %C(auto,red)%d%C(auto,reset) %s' -1
+  lf = log --first-parent --oneline
+  my-commits = log --author='Evan Travers' --author-date-order --date=format:'%a %b %d %r' --format='%h | %ad | %s'
+  jump = "!$(brew --prefix git)/share/git-core/contrib/git-jump/git-jump"
 # [includeIf "gitdir:~/dev/"]
 #   path = .gitconfig-dev
 

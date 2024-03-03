@@ -3,7 +3,7 @@
   programs.tmux = {
     enable = true;
 
-    extraConfig = lib.fileContents ../tmux/tmux.conf;
+    extraConfig = lib.fileContents ../config/tmux/tmux.conf;
 
 
     plugins = with pkgs.tmuxPlugins; [
@@ -12,8 +12,8 @@
       #   logging
       #   pain-control
       #   sessionist
-      gruvbox
-      #nord
+      # gruvbox
+      nord
       tmux-thumbs
       #   yank
     ];

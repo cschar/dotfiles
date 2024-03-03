@@ -1,7 +1,7 @@
 {...}:
 {
   home.file = {
-    ".gitconfig.default".source = ../git/.gitconfig;
+    ".gitconfig.default".source = ../config/git/.gitconfig;
   };
 
   #https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix

@@ -28,7 +28,7 @@ alias gpr='git pull --rebase'
 alias gcane='git commit --amend --no-edit'
 alias gitlog="git log --graph --date=short --format=format:'%w(200,0,4)%C(yellow)%ad %Cblue%aN%Creset: %Cgreen%h%Creset %C(magenta)%d%Creset %s' $@ && echo \"\""
 alias glg="gitlog"
-alias g_clean_local="git branch --merged master | grep  --invert-match ".*master" | xargs -n 1 git branch --delete"
+alias g_clean_local="git branch --merged master | grep  --invert-match '.*master' | xargs -n 1 git branch --delete"
 alias gacpo='git add -u; git commit -m "fix"; git push origin'
 alias lz='lazygit'
 
@@ -46,7 +46,7 @@ function klp {
 alias sshu="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 
 function dl_bing {
-    URL=$(curl "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US" | jq .images[].url | sed s/\"//g)
+    URL=$(curl "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US" | jq ".images[].url" | sed s/\"//g)
     echo "got url: https://bing.com/$URL"
 
     wget "https://bing.com/$URL" -O bing.jpg
