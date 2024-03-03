@@ -32,6 +32,7 @@ alias g_clean_local="git branch --merged master | grep  --invert-match '.*master
 alias gacpo='git add -u; git commit -m "fix"; git push origin'
 alias lz='lazygit'
 
+
 # kubernetes
 alias k="kubectl"
 #ex: klp fluent  to find fluent-bit-xcdfafadsf
