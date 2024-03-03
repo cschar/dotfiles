@@ -29,7 +29,7 @@
           ./config/wsl
           home-manager.nixosModules.home-manager
           {
-            home-manager.users.nixos = import ./home/home.nix;
+            home-manager.users.nixos = import ./home-manager/home.nix;
           }
         ];
       };
